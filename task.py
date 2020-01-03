@@ -14,7 +14,7 @@ def scale_img(img_path, output_path, file_name):
     img = img.resize((wsize, baseheight), PIL.Image.ANTIALIAS)
 
     output_file=output_path+"/resized_"+file_name
-    img.save(output_file, optimize=True, quality=90)
+    img.save(output_file, optimize=True, quality=95)
 
     size=0
     with open(output_file, 'rb') as q:
