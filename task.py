@@ -16,13 +16,6 @@ def scale_img(img_path, output_path, file_name):
     output_file=output_path+"/resized_"+file_name
     img.save(output_file, optimize=True, quality=95)
 
-    size=0
-    with open(output_file, 'rb') as q:
-        t=q.read()
-        size=len(t)
-        
-    if(size<64000):
-        img.save(output_file, optimize=True, quality=60)
 
 print("GEEK123 Use me to scale image")
 
@@ -36,7 +29,7 @@ if os.path.exists(path):
         pass
         print("Output path already exist")
     for file in os.listdir(path):
-        if file.endswith(".png"):
+        if file.endswith(".png") or file.endswith(".jpg"):
             img_path=path+'/'+file
             print("Scaling "+img_path)
             scale_img(img_path, output_path, file)
